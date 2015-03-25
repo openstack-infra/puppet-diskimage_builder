@@ -1,0 +1,11 @@
+{
+  "name": "openstackinfra-diskimage-builder",
+  "version": "0.0.1",
+  "author": "Openstack Infra",
+  "summary": "Puppet module for diskimage-builder",
+  "license": "Apache 2.0",
+  "source": "git://git.openstack.org/openstack-infra/puppet-diskimage-builder.git",
+  "project_page": "http://ci.openstack.org/",
+  "issues_url": "https://storyboard.openstack.org/",
+  "dependencies": []
+}
