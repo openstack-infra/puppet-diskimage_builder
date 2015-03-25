@@ -24,11 +24,17 @@ class diskimage_builder () {
     'python-lzma',
     'qemu-utils',
     'ubuntu-keyring',
+    'vhd-util',
     'yum',
     'yum-utils',
   ]
 
   package { $packages:
+    ensure => present,
+    require => Apt::Ppa['ppa:mordred/infra'],
+  }
+
+  apt::ppa { 'ppa:mordred/infra':
     ensure => present,
   }
 
