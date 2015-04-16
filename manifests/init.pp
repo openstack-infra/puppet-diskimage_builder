@@ -31,10 +31,10 @@ class diskimage_builder () {
 
   package { $packages:
     ensure => present,
-    require => Apt::Ppa['ppa:mordred/infra'],
+    require => Apt::Ppa['ppa:openstack-ci-core/vhd-util'],
   }
 
-  apt::ppa { 'ppa:mordred/infra':
+  apt::ppa { 'ppa:openstack-ci-core/vhd-util':
     ensure => present,
   }
 
