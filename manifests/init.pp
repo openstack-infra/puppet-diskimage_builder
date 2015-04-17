@@ -30,7 +30,7 @@ class diskimage_builder () {
   ]
 
   package { $packages:
-    ensure => present,
+    ensure  => present,
     require => Apt::Ppa['ppa:mordred/infra'],
   }
 
