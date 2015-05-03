@@ -34,9 +34,7 @@ class diskimage_builder () {
     require => Apt::Ppa['ppa:openstack-ci-core/vhd-util'],
   }
 
-  apt::ppa { 'ppa:openstack-ci-core/vhd-util':
-    ensure => present,
-  }
+  apt::ppa { 'ppa:openstack-ci-core/vhd-util': }
 
   # required by the diskimage-builder element scripts
   if ! defined(Package['python-yaml']) {
