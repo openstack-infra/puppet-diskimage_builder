@@ -1,0 +1,8 @@
+Workflow+1: Monty Taylor <mordred@inaugust.com>
+Verified+2: Jenkins
+Code-Review+2: Joshua Hesketh <joshua.hesketh@rackspace.com>
+Submitted-by: Jenkins
+Submitted-at: Tue, 05 May 2015 06:00:13 +0000
+Reviewed-on: https://review.openstack.org/179618
+Project: openstack-infra/puppet-diskimage_builder
+Branch: refs/heads/master
