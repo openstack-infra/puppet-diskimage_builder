@@ -1,0 +1,10 @@
+Code-Review+1: greghaynes <greg@greghaynes.net>
+Code-Review+2: Monty Taylor <mordred@inaugust.com>
+Code-Review+2: Clark Boylan <cboylan@sapwetik.org>
+Workflow+1: Clark Boylan <cboylan@sapwetik.org>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Mon, 11 May 2015 16:37:48 +0000
+Reviewed-on: https://review.openstack.org/180850
+Project: openstack-infra/puppet-diskimage_builder
+Branch: refs/heads/master
