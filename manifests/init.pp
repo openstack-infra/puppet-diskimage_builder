@@ -15,7 +15,7 @@
 # == Class: diskimage_builder
 #
 class diskimage_builder () {
-  include pip
+  include ::pip
 
   $packages = [
     'debian-keyring',
