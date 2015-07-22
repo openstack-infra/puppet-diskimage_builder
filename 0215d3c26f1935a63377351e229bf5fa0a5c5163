@@ -1,0 +1,10 @@
+Verified+2: Jenkins
+Code-Review+1: Paul Belanger <pabelanger@redhat.com>
+Code-Review+2: yolanda.robla <info@ysoft.biz>
+Code-Review+2: Spencer Krum <nibz@spencerkrum.com>
+Workflow+1: Spencer Krum <nibz@spencerkrum.com>
+Submitted-by: Jenkins
+Submitted-at: Wed, 22 Jul 2015 17:26:54 +0000
+Reviewed-on: https://review.openstack.org/202661
+Project: openstack-infra/puppet-diskimage_builder
+Branch: refs/heads/master
