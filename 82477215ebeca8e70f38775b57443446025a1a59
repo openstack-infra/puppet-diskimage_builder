@@ -1,0 +1,9 @@
+Verified+2: Jenkins
+Code-Review+2: yolanda.robla <info@ysoft.biz>
+Workflow+1: yolanda.robla <info@ysoft.biz>
+Code-Review+1: Fabien Boucher <fabien.boucher@enovance.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 21 Aug 2015 07:34:17 +0000
+Reviewed-on: https://review.openstack.org/214837
+Project: openstack-infra/puppet-diskimage_builder
+Branch: refs/heads/master
