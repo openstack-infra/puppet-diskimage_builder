@@ -16,6 +16,7 @@
 #
 class diskimage_builder () {
   include ::pip
+  include ::apt
 
   $packages = [
     'debian-keyring',
