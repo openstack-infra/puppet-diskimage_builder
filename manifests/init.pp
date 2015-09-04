@@ -16,6 +16,7 @@
 #
 class diskimage_builder () {
   include ::pip
+  include ::apt
 
   $packages = [
     'debian-keyring',
@@ -29,12 +30,11 @@ class diskimage_builder () {
     'yum-utils',
   ]
 
-  package { $packages:
+  apt::ppa { 'ppa:openstack-ci-core/vhd-util':
+  } -> package { $packages:
     ensure  => present,
-    require => Apt::Ppa['ppa:openstack-ci-core/vhd-util'],
+    require => Class['apt::update'],
   }
-
-  apt::ppa { 'ppa:openstack-ci-core/vhd-util': }
 
   # required by the diskimage-builder element scripts
   if ! defined(Package['python-yaml']) {
