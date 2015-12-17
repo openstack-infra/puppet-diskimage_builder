@@ -22,6 +22,7 @@ class diskimage_builder () {
     'debian-keyring',
     'debootstrap',
     'kpartx',
+    'lvm2',
     'python-lzma',
     'qemu-utils',
     'ubuntu-keyring',
