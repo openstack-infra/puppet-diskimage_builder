@@ -48,6 +48,13 @@ class diskimage_builder () {
       }
   }
 
+  # required by lvm dib element
+  if ! defined(Package['lvm2']) {
+      package { 'lvm2':
+          ensure => present,
+      }
+  }
+
   package { 'diskimage-builder':
     ensure   => latest,
     provider => pip,
