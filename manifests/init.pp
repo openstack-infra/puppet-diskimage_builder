@@ -14,7 +14,10 @@
 
 # == Class: diskimage_builder
 #
-class diskimage_builder () {
+class diskimage_builder (
+  $use_git = false,
+  $git_source_repo = 'https://git.openstack.org/openstack/diskimage-builder',
+  ) {
   include ::pip
   include ::apt
 
@@ -55,13 +58,26 @@ class diskimage_builder () {
       }
   }
 
-  package { 'diskimage-builder':
-    ensure   => latest,
-    provider => pip,
-    require  => [
-      Class['pip'],
-      Package['python-yaml'],
-    ],
-  }
 
+  if $use_git == true {
+    package { 'diskimage-builder':
+      ensure   => present,
+      provider => pip,
+      source   => $git_source_repo,
+      require  => [
+        Class['pip'],
+        Package['python-yaml'],
+      ],
+    }
+  }
+  else {
+    package { 'diskimage-builder':
+      ensure   => latest,
+      provider => pip,
+      require  => [
+        Class['pip'],
+        Package['python-yaml'],
+      ],
+    }
+  }
 }
