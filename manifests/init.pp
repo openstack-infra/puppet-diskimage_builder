@@ -15,8 +15,8 @@
 # == Class: diskimage_builder
 #
 class diskimage_builder (
-  $use_git = false,
   $git_source_repo = 'git+https://git.openstack.org/openstack/diskimage-builder',
+  $use_git         = false,
   ) {
   include ::pip
   include ::apt
