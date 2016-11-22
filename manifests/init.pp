@@ -58,26 +58,13 @@ class diskimage_builder (
       }
   }
 
+  package { 'diskimage-builder':
+    ensure   => latest,
+    provider => openstack_pip,
+    require  => [
+      Class['pip'],
+      Package['python-yaml'],
+    ],
+  }
 
-  if $use_git == true {
-    package { 'diskimage-builder':
-      ensure   => present,
-      provider => openstack_pip,
-      source   => $git_source_repo,
-      require  => [
-        Class['pip'],
-        Package['python-yaml'],
-      ],
-    }
-  }
-  else {
-    package { 'diskimage-builder':
-      ensure   => latest,
-      provider => openstack_pip,
-      require  => [
-        Class['pip'],
-        Package['python-yaml'],
-      ],
-    }
-  }
 }
