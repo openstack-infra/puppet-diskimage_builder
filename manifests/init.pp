@@ -17,9 +17,22 @@
 class diskimage_builder (
   $git_source_repo = 'git+https://git.openstack.org/openstack/diskimage-builder',
   $use_git         = false,
+  $support_vhd     = true,
   ) {
   include ::pip
-  include ::apt
+
+  if $support_vhd {
+    include ::apt
+    apt::ppa { 'ppa:openstack-ci-core/vhd-util':
+    }
+    package { 'vhd-util':
+      ensure  => present,
+      require => [
+        Apt::Ppa['ppa:openstack-ci-core/vhd-util'],
+        Class['apt::update'],
+      ],
+    }
+  }
 
   $packages = [
     'debian-keyring',
@@ -28,20 +41,12 @@ class diskimage_builder (
     'python-lzma',
     'qemu-utils',
     'ubuntu-keyring',
-    'vhd-util',
     'yum',
     'yum-utils',
   ]
 
-  apt::ppa { 'ppa:openstack-ci-core/vhd-util':
-  }
-
   package { $packages:
     ensure  => present,
-    require => [
-      Apt::Ppa['ppa:openstack-ci-core/vhd-util'],
-      Class['apt::update'],
-    ],
   }
 
   # required by the diskimage-builder element scripts
