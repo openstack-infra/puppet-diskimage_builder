@@ -25,7 +25,7 @@ class diskimage_builder (
     include ::apt
     apt::ppa { 'ppa:openstack-ci-core/vhd-util':
     }
-    package { 'vhd-util':
+    package { 'blktap-utils':
       ensure  => present,
       require => [
         Apt::Ppa['ppa:openstack-ci-core/vhd-util'],
