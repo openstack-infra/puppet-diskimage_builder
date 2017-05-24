@@ -45,6 +45,13 @@ class diskimage_builder (
     'yum-utils',
   ]
 
+  # Ubuntu trusty doesn't support zypper today, so skip it.
+  if ($::lsbdistcodename != 'trusty') {
+    package { 'zypper':
+      ensure => present,
+    }
+  }
+
   package { $packages:
     ensure  => present,
   }
