@@ -47,7 +47,9 @@ class diskimage_builder (
 
   # Ubuntu trusty doesn't support zypper today, so skip it.
   if ($::lsbdistcodename != 'trusty') {
-    package { 'zypper':
+    # gnupg2 is a missing dependency on zypper, see
+    # https://bugs.launchpad.net/bugs/1639428
+    package { ['zypper', 'gnupg2']:
       ensure => present,
     }
   }
