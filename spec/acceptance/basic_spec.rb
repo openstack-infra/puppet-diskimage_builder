@@ -35,7 +35,6 @@ describe 'puppet-diskimage_builder module', :if => ['debian', 'ubuntu'].include?
         package('debootstrap'),
         package('kpartx'),
         package('python-lzma'),
-        package('python-yaml'),
         package('qemu-utils'),
         package('ubuntu-keyring'),
         package('vhd-util'),

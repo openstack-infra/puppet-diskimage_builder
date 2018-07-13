@@ -58,13 +58,6 @@ class diskimage_builder (
     ensure  => present,
   }
 
-  # required by the diskimage-builder element scripts
-  if ! defined(Package['python-yaml']) {
-      package { 'python-yaml':
-          ensure => present,
-      }
-  }
-
   # required by lvm dib element
   if ! defined(Package['lvm2']) {
       package { 'lvm2':
@@ -80,7 +73,6 @@ class diskimage_builder (
       source   => $git_source_repo,
       require  => [
         Class['pip'],
-        Package['python-yaml'],
       ],
     }
   }
@@ -90,7 +82,6 @@ class diskimage_builder (
       provider => openstack_pip,
       require  => [
         Class['pip'],
-        Package['python-yaml'],
       ],
     }
   }
