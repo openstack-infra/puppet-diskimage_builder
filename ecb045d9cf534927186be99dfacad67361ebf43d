@@ -1,0 +1,9 @@
+Code-Review+2: James E. Blair <corvus@inaugust.com>
+Code-Review+2: Paul Belanger <pabelanger@redhat.com>
+Workflow+1: Paul Belanger <pabelanger@redhat.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Sat, 21 Jul 2018 01:03:28 +0000
+Reviewed-on: https://review.openstack.org/582518
+Project: openstack-infra/puppet-diskimage_builder
+Branch: refs/heads/master
