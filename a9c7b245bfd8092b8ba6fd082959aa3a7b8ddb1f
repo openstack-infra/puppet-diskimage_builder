@@ -1,0 +1,8 @@
+Code-Review+2: Clark Boylan <cboylan@sapwetik.org>
+Workflow+1: Clark Boylan <cboylan@sapwetik.org>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Sat, 21 Jul 2018 14:54:24 +0000
+Reviewed-on: https://review.openstack.org/582009
+Project: openstack-infra/puppet-diskimage_builder
+Branch: refs/heads/master
