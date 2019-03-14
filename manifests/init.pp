@@ -22,8 +22,21 @@ class diskimage_builder (
   include ::pip
 
   if $support_vhd {
+    file { '/root/openstack-ci-core-ppa-key.pubkey':
+      ensure => present,
+      owner  => 'root',
+      group  => 'root',
+      mode   => '0644',
+      source => 'puppet:///modules/diskimage_builder/openstack-ci-core-ppa-key.pubkey',
+    }
     include ::apt
+    apt::key { 'openstack-ci-core-ppa-key':
+      id      => '15B6CE7C018D05F5',
+      source  => '/root/openstack-ci-core-ppa-key.pubkey',
+      require => File['/root/openstack-ci-core-ppa-key.pubkey'],
+    }
     apt::ppa { 'ppa:openstack-ci-core/vhd-util':
+      require => Apt::Key['openstack-ci-core-ppa-key'],
     }
     package { 'vhd-util':
       ensure  => present,
