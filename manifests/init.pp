@@ -31,7 +31,7 @@ class diskimage_builder (
     }
     include ::apt
     apt::key { 'openstack-ci-core-ppa-key':
-      id      => '15B6CE7C018D05F5',
+      id      => '2B5DE24F0EC9F98BD2F85CA315B6CE7C018D05F5',
       source  => '/root/openstack-ci-core-ppa-key.pubkey',
       require => File['/root/openstack-ci-core-ppa-key.pubkey'],
     }
