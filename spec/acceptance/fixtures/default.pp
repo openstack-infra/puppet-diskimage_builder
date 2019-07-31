@@ -1,1 +1,0 @@
-class { '::diskimage_builder': }
